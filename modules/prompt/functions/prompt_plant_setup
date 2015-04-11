@@ -85,9 +85,16 @@ function prompt_steeef_setup {
   # Set python-info parameters.
   zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
 
+  # editor mode
+  zstyle ':prezto:module:editor:info:keymap:primary' format '⎆'
+  zstyle ':prezto:module:editor:info:keymap:primary:insert' format '⎆'
+  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '⎆'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '⌘'
+  zstyle ':prezto:module:editor:info:completing' format '⌛︎'
+
   # Define prompts.
   PROMPT="
-${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ⌜${_prompt_steeef_colors[5]}%~%f⌟ "'${vcs_info_msg_0_}'"
+${_prompt_steeef_colors[3]}%n%f@${_prompt_steeef_colors[2]}%m%f ${_prompt_steeef_colors[5]}%~%f "'${vcs_info_msg_0_}'" "'${editor_info[keymap]}'"
 "'$python_info[virtualenv]'"🌱  "
   RPROMPT=''
 }
